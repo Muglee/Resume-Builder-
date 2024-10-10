@@ -1,0 +1,114 @@
+
+{% extends 'common/home.html' %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Resume Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .resume-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .resume-header p {
+            margin: 5px 0;
+        }
+        
+        .resume-section {
+            margin-bottom: 20px;
+        }
+        
+        .resume-section h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            color: #007bff;
+        }
+        
+        .experience, .education {
+            margin-bottom: 10px;
+        }
+        
+        h3 {
+            margin: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            margin: 5px 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="resume-header">
+            <img src="/{{information.profile_pic}}" alt="" height="100px">
+            <h1>{{information.user.username}}</h1>
+            <p>{{information.designation}}</p>
+        </header>
+        
+        <section class="resume-section">
+            <h2>Experiences</h2>
+            <p>A brief summary about your professional background and skills.</p>
+            
+            <a href="{% url 'listbyUser' %}">List by User</a>
+        </section>
+
+        <section class="resume-section">
+            <h2>Experience</h2>
+            <div class="experience">
+                <h3>Job Title at Company Name</h3>
+                <p><strong>Dates Employed</strong></p>
+                <p>Responsibilities and achievements in this role.</p>
+            </div>
+            <div class="experience">
+                <h3>Job Title at Company Name</h3>
+                <p><strong>Dates Employed</strong></p>
+                <p>Responsibilities and achievements in this role.</p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            <div class="education">
+                <h3>Degree in Field of Study</h3>
+                <p>University Name, Year</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+
+{% endblock body %}
